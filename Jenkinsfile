@@ -2,7 +2,7 @@
 
 library identifier: 'jenkins-shared-library@main', retriever: modernSCM(
   [$class: 'GitSCMSource',
-  remote: 'https://github.com/raouf21-dev/java-maven-app-tf.git',
+  remote: 'https://github.com/raouf21-dev/jenkins-shared-library.git',
   credentialsId: 'github-credentials'
   ]
 )
