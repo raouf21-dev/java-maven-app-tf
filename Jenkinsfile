@@ -42,6 +42,7 @@ pipeline {
       }
       steps {
         script {
+          sh 'aws sts get-caller-identity'
           dir('terraform') {
             sh "terraform init"
             sh "terraform apply --auto-approve"
