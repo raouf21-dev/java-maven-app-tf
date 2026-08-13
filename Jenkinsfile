@@ -44,13 +44,13 @@ pipeline {
         script {
           sh 'aws sts get-caller-identity'
           dir('terraform') {
-            // sh "terraform init -reconfigure"
+            sh "terraform init -reconfigure"
             // sh "terraform apply --auto-approve"
             sh "terraform destroy --auto-approve"
-            EC2_PUBLIC_IP = sh(
-              script: "terraform output ec2-public_ip",
-              returnStdout: true
-            ).trim()
+            // EC2_PUBLIC_IP = sh(
+            //   script: "terraform output ec2-public_ip",
+            //   returnStdout: true
+            // ).trim()
           }
         }
       }
