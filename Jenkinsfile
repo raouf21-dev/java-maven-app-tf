@@ -67,7 +67,10 @@ pipeline {
 
       // Verify which IAM user Jenkins is using
       sh 'aws sts get-caller-identity'
-
+      sh '''
+      aws s3api get-bucket-location \
+        --bucket myapp-tf-s3-bucket
+      '''
       // TEST 1: Check bucket policy
       sh 'aws s3api get-bucket-policy --bucket myapp-tf-s3-bucket --region ap-south-1 || true'
 
